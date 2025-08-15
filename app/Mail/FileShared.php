@@ -13,12 +13,16 @@ class FileShared extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $file;
+    public $user;
+
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct($file, $user)
     {
-        //
+        $this->file = $file;
+        $this->user = $user;
     }
 
     /**
@@ -27,7 +31,7 @@ class FileShared extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'File Shared',
+            subject: 'New File is Shared with You',
         );
     }
 
@@ -37,7 +41,7 @@ class FileShared extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            view: 'emails.file_shared',
         );
     }
 

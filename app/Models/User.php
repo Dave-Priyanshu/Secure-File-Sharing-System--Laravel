@@ -50,4 +50,12 @@ class User extends Authenticatable
     public function isAdmin(){
         return $this->role === 'admin';
     }
+
+    public function files(){
+        return $this->hasMany(File::class);
+    }
+
+    public function sharedFiles(){
+        return $this->belongsToMany(File::class, 'file_user');
+    }
 }

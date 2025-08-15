@@ -18,17 +18,17 @@ class FileController extends Controller
         // dd($request->all());
         $request->validate([
             'file'=> 'required|file|max:10240', 
-            'expiration_minutes' => 'required|integer|min:1|max:60', 
+            // 'expiration_minutes' => 'required|integer|min:1|max:60', 
         ]);
 
         // store the file in database
         $file = $request->file('file');
-        $path = $file->store('iploads','public'); //this will store in storage/app/public/uplods folder
+        $path = $file->store('uploads','public'); //this will store in storage/app/public/uplods folder
         $originalName = $file->getClientOriginalName();
 
         // create diff token and expiration time
         $token = Str::uuid();
-        $expireAt = now()->addMinutes((int) $request->expiration_minutes);
+        // $expireAt = now()->addMinutes((int) $request->expiration_minutes);
 
         // save files
         $fileRecord = File::create([
@@ -36,7 +36,7 @@ class FileController extends Controller
             'name'=>$originalName,
             'path'=>$path,
             'token'=>$token,
-            'expires_at'=>$expireAt,
+            'expires_at'=>null,
             'is_used'=>false, // initially not used
         ]);
 

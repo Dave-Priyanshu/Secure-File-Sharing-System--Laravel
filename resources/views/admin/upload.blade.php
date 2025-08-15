@@ -30,13 +30,13 @@
                         </div>
 
                         <!-- Expiration Time -->
-                        <div class="mb-4">
+                        {{-- <div class="mb-4">
                             <label for="expiration_minutes" class="block text-sm font-medium text-gray-700">Expiration Time (Minutes)</label>
                             <input type="number" name="expiration_minutes" id="expiration_minutes" value="10" min="1" max="60" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500" required>
                             @error('expiration_minutes')
                                 <span class="text-red-600 text-sm">{{ $message }}</span>
                             @enderror
-                        </div>
+                        </div> --}}
 
                         <!-- Submit Button -->
                         <div>

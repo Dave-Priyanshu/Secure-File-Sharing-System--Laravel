@@ -20,11 +20,12 @@ class File extends Model
         'is_used' => 'boolean',
     ];
 
+
     public function user(){
         return $this->belongsTo(User::class);
     }
 
-    public function SharedUsers(){
+    public function sharedUsers(){
         return $this->belongsToMany(User::class, 'file_user');
     }
 }

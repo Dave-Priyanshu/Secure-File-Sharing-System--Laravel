@@ -21,10 +21,8 @@
                         <a href="{{ route('admin.upload') }}" class="inline-block bg-blue-500 hover:bg-blue-700 text-red-600 font-bold py-2 px-4 rounded mr-2">
                             Upload New File
                         </a>
-                        <a href="" class="inline-block bg-green-500 hover:bg-green-700 text-red-600 font-bold py-2 px-4 rounded">
-                            Registered Users List
-                        </a>
-                         <a href="" class="inline-block bg-green-500 hover:bg-green-700 text-red-600 font-bold py-2 px-4 rounded">
+
+                         <a href="{{ route('admin.share') }}" class="inline-block bg-green-500 hover:bg-green-700 text-red-600 font-bold py-2 px-4 rounded">
                             Share Files
                         </a>
                     </div>
